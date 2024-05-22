@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 16:40:08 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 17:45:10 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,17 @@ void	init_stack(t_stack_node **a, char **av)
 	long	n;
 	
 	i = 0;
-	while (av[i])
+	while (av[++i])
 	{
 		if (error_syntax(av[i]))
-			free_stack(a);
+			free_error(a);
 		n = ft_atol(av[i]);
 		if (n < INT_MIN || n > INT_MAX)
-			free_stack(a);
-		if (error_duplicate(*a))
-			free_stack(a);
+			free_error(a);
 		append_node(a, n);
-		i++;
 	}
+	if (error_duplicate(*a))
+			free_error(a);
 }
 
 t_stack_node	*get_cheapest(t_stack_node *stack)

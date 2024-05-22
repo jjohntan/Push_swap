@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:02:59 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/21 20:00:56 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 15:56:53 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,46 +54,4 @@ void	ss(t_stack_node **a, t_stack_node **b)
 	swap(a);
 	swap(b);
 	ft_printf("ss\n");
-}
-void	print_list(t_stack_node **stack)
-{
-	t_stack_node *buffer;
-	
-	buffer = *stack;
-	while (*stack != NULL)
-	{
-		printf("%d\n", (*stack)->nbr);
-		*stack = (*stack)->next;
-	}
-	*stack = buffer;
-}
-
-int main() {
-    t_stack_node *stack_a = NULL;
-    t_stack_node *stack_b = NULL;
-
-    t_stack_node *node1 = malloc(sizeof(t_stack_node));
-    node1->nbr = 1;
-    node1->next = NULL;
-    node1->previous = NULL;
-    stack_a = node1;
-
-    t_stack_node *node2 = malloc(sizeof(t_stack_node));
-    node2->nbr = 2;
-    node2->next = NULL;
-    node2->previous = NULL;
-    stack_b = node2;
-
-	printf("stack_a:\n");
-	print_list(&stack_a);
-	printf("stack_b:\n");
-	print_list(&stack_b);
-	printf("after ");
-	pa(&stack_a, &stack_b);
-	printf("stack_a:\n");
-	print_list(&stack_a);
-	printf("stack_b:\n");
-	print_list(&stack_b);
-
-    return 0;
 }

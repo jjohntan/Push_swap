@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 16:22:30 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/21 17:08:19 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:04:17 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	set_cheapest(t_stack_node *stack)
 	cheapest_node->cheapest = true;
 }
 
-void	init_nodes_a(t_stack_node *a, t_stack_node *b)
+void	init_nodes(t_stack_node *a, t_stack_node *b)
 {
 	set_current_index(a);
 	set_current_index(b);

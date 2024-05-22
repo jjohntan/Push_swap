@@ -6,13 +6,13 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/21 18:45:07 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:40:08 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	append_node(t_stack_node **stack,int n)
+void	append_node(t_stack_node **stack,int nbr)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
@@ -22,7 +22,7 @@ void	append_node(t_stack_node **stack,int n)
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return ;
-	node->nbr = n;
+	node->nbr = nbr;
 	node->next = NULL;
 	if (!(*stack))
 	{

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:58:16 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/21 18:27:54 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:04:47 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ void	rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rr(a, b);
-	current_index(*a);
-	current_index(*b);
+	set_current_index(*a);
+	set_current_index(*b);
 }
 
 void	rev_rotate_both(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest_node)
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rrr(a, b);
-	current_index(*a);
-	current_index(*b);
+	set_current_index(*a);
+	set_current_index(*b);
 }
 
 void	move_nodes(t_stack_node **a, t_stack_node **b)
@@ -37,7 +37,7 @@ void	move_nodes(t_stack_node **a, t_stack_node **b)
 		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median) && !(cheapest_node->target_node->above_median))
 		rev_rotate_both(a, b, cheapest_node);
-	finsh_rotation(b, cheapest_node, 'b');
+	finish_rotation(b, cheapest_node, 'b');
 	finish_rotation(a, cheapest_node->target_node, 'a');
 	pa(a, b);
 }

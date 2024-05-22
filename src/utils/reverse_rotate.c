@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:28:04 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/21 19:59:45 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 15:56:23 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	reverse_rotate(t_stack_node **stack)
 	
 	if (!*stack || !(*stack)->next)
 		return ;
-	last = last_node(*stack);
+	last = find_last(*stack);
 	last->next = *stack;
 	last->previous = NULL;
 	last->previous->next = NULL;
@@ -43,16 +43,4 @@ void	rrr(t_stack_node **a, t_stack_node **b)
 	reverse_rotate(a);
 	reverse_rotate(b);
 	ft_printf("rrr\n");
-}
-void	print_list(t_stack_node **stack)
-{
-	t_stack_node *buffer;
-	
-	buffer = *stack;
-	while (*stack != NULL)
-	{
-		printf("%d\n", (*stack)->nbr);
-		*stack = (*stack)->next;
-	}
-	*stack = buffer;
 }

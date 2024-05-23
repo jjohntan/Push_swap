@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 22:16:42 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 17:26:20 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:32:16 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	stack_sorted(t_stack_node *stack)
 int	stack_len(t_stack_node *stack)
 {
 	int	i;
-	
+
 	if (!stack)
 		return (0);
 	i = 0;
@@ -43,7 +43,7 @@ int	stack_len(t_stack_node *stack)
 t_stack_node	*find_last(t_stack_node *stack)
 {
 	t_stack_node	*node;
-	
+
 	if (!stack)
 		return (0);
 	node = stack;
@@ -55,13 +55,13 @@ t_stack_node	*find_last(t_stack_node *stack)
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	t_stack_node	*min_node;
-	long	min;
-	
+	long			min;
+
 	if (!stack)
 		return (NULL);
 	min = LONG_MAX;
 	while (stack)
-	{ 
+	{
 		if (stack->nbr < min)
 		{
 			min = stack->nbr;
@@ -75,8 +75,8 @@ t_stack_node	*find_min(t_stack_node *stack)
 t_stack_node	*find_max(t_stack_node	*stack)
 {
 	t_stack_node	*max_node;
-	long	max;
-	
+	long			max;
+
 	if (!stack)
 		return (NULL);
 	max = LONG_MIN;
@@ -87,7 +87,7 @@ t_stack_node	*find_max(t_stack_node	*stack)
 			max = stack->nbr;
 			max_node = stack;
 		}
-	stack = stack->next;
+		stack = stack->next;
 	}
 	return (max_node);
 }

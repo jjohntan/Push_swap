@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:24:01 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 21:12:07 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:26:01 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,13 @@ void	print_list(t_stack_node **stack)
 
 int	main(int ac, char **av)
 {
-	t_stack_node *a;
-	t_stack_node *b;
-	char **input;
+	t_stack_node	*a;
+	t_stack_node	*b;
+	char			**input;
 
 	a = NULL;
 	b = NULL;
 	input = passing(ac, av);
-	// if (ac == 1 || (ac == 2 && !av[1][0]))
-	// 	return (1);
-	// else if (ac == 2)
-	// {
-	// 	av = ft_split(av[1], ' ');
-	// }
 	init_stack(&a, input);
 	print_list(&a);
 	if (!stack_sorted(a))

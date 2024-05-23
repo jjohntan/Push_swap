@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 15:01:52 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:31:03 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	**passing(int ac, char **av)
 {
 	int	flag;
-	
+
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (NULL);
 	else if (ac == 2)
@@ -28,7 +28,7 @@ char	**passing(int ac, char **av)
 	return (av + flag);
 }
 
-void	append_node(t_stack_node **stack,int nbr)
+void	append_node(t_stack_node **stack, int nbr)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
@@ -57,7 +57,7 @@ void	init_stack(t_stack_node **a, char **av)
 {
 	int		i;
 	long	n;
-	
+
 	if (av == NULL)
 		return ;
 	i = -1;
@@ -71,7 +71,7 @@ void	init_stack(t_stack_node **a, char **av)
 		append_node(a, n);
 	}
 	if (error_duplicate(*a))
-			free_error(a);
+		free_error(a);
 }
 
 t_stack_node	*get_cheapest(t_stack_node *stack)
@@ -89,7 +89,7 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 // t_stack_node init_stack(void)
 // {
 // 	t_stack_node stack;
-	
+//
 // 	stack.nbr = 0;
 // 	return (stack);
 // }
@@ -107,7 +107,8 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 // convert string to integer and pass to stack
 //store all the int to a pointer
 
-void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	finish_rotation(t_stack_node **stack,
+	t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{

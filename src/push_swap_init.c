@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 16:22:30 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 16:04:17 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:24:08 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	set_current_index(t_stack_node *stack)
 {
 	int	i;
 	int	median;
-	
+
 	if (!stack)
 		return ;
 	i = 0;
@@ -38,7 +38,7 @@ void	set_target_node(t_stack_node *a, t_stack_node *b)
 	t_stack_node	*ptr_a;
 	t_stack_node	*target_node;
 	long			best_value;
-	
+
 	while (b)
 	{
 		ptr_a = a;
@@ -64,11 +64,10 @@ void	set_cost(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
 	int	len_b;
-	
+
 	len_a = stack_len(a);
 	len_b = stack_len(b);
-	
-	while(b)
+	while (b)
 	{
 		b->push_cost = b->index;
 		if (!b->above_median)
@@ -83,9 +82,9 @@ void	set_cost(t_stack_node *a, t_stack_node *b)
 
 void	set_cheapest(t_stack_node *stack)
 {
-	long	cheapest_value;
+	long			cheapest_value;
 	t_stack_node	*cheapest_node;
-	
+
 	if (!stack)
 		return ;
 	cheapest_value = LONG_MAX;

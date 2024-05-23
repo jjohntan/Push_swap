@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:25:05 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/21 15:33:05 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:55:10 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long	ft_atol(const char *str)
 {
 	long long	result;
-	int	sign;
+	int			sign;
 
 	result = 0;
 	sign = 1;

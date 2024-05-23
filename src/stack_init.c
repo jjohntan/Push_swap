@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 16:31:03 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:39:59 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 //store all the int to a pointer
 
 void	finish_rotation(t_stack_node **stack,
-	t_stack_node *top_node, char stack_name)
+t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{

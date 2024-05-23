@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:02:59 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 15:46:48 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:38:34 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	swap(t_stack_node **stack)
 {
-	t_stack_node *first_node;
-	t_stack_node *second_node;
-	
+	t_stack_node	*first_node;
+	t_stack_node	*second_node;
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	first_node = *stack;

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:28:04 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 15:45:20 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 18:19:46 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void	reverse_rotate(t_stack_node **stack)
 {
 	t_stack_node	*last_node;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	last_node = find_last(*stack);
 	last_node->next = *stack;
-	last_node->previous = NULL;
+	(*stack)->next->previous = last_node;
 	last_node->previous->next = NULL;
-	last_node->previous->next = last_node;
+	last_node->previous = NULL;
 	*stack = last_node;
 }
 

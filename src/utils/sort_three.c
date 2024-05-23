@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:00:19 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 16:19:12 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:38:05 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_three(t_stack_node **a)
 {
 	t_stack_node	*biggest_node;
-	
+
 	biggest_node = find_max(*a);
 	if (*a == biggest_node)
 		ra(a);

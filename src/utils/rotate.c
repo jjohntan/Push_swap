@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:12:39 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 15:44:08 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 16:36:01 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	rotate(t_stack_node **stack)
 {
 	t_stack_node	*last_node;
 	t_stack_node	*second_node;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	last_node = find_last(*stack);
 	second_node = (*stack)->next;
-	*stack = second_node; // adjust head to scond node
+	*stack = second_node;
 	second_node->previous->next = NULL;
 	second_node->previous->previous = last_node;
 	last_node->next = second_node->previous;

@@ -6,11 +6,27 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 17:45:10 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 15:01:52 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+char	**passing(int ac, char **av)
+{
+	int	flag;
+	
+	if (ac == 1 || (ac == 2 && !av[1][0]))
+		return (NULL);
+	else if (ac == 2)
+	{
+		av = ft_split(av[1], ' ');
+		flag = 0;
+	}
+	else
+		flag = 1;
+	return (av + flag);
+}
 
 void	append_node(t_stack_node **stack,int nbr)
 {
@@ -42,7 +58,9 @@ void	init_stack(t_stack_node **a, char **av)
 	int		i;
 	long	n;
 	
-	i = 0;
+	if (av == NULL)
+		return ;
+	i = -1;
 	while (av[++i])
 	{
 		if (error_syntax(av[i]))

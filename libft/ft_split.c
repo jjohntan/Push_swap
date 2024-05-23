@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:24:16 by jetan             #+#    #+#             */
-/*   Updated: 2024/04/25 16:31:20 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 20:42:02 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static size_t	ft_wordlen(char const *s, char c, size_t start)
 	return (len);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	size_t	i;
@@ -76,3 +76,10 @@ char	**ft_split(char *s, char c)
 	res[j] = NULL;
 	return (res);
 }
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char **result;	
+// 	result = ft_split("IM TIRED    BLEH", ' ');
+// 	printf("%s", result[5]);
+// }

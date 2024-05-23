@@ -16,12 +16,12 @@ UTILS = src/utils/push.c \
 OBJS = $(SRCS:.c=.o) $(UTILS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinc -Ilibft 
-
+CFLAGS = -Wall -Wextra -Werror -Iinc -Ilibft $(FSANTIZE)
+FSANTIZE = -fsanitize=address -g3
 all: $(NAME)
 
 $(NAME): $(OBJS) libft
-	$(CC) $(OBJS) -Llibft -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -Llibft -lft -o $(NAME)
 
 %.o: src/%.c
 	$(CC) $(CFLAGS) -c $< -o $@

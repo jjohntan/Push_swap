@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:52:22 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 16:55:47 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/22 21:12:26 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	set_target_node(t_stack_node *a, t_stack_node *b);
 void	set_cost(t_stack_node *a, t_stack_node *b);
 void	set_cheapest(t_stack_node *stack);
 void	init_nodes(t_stack_node *a, t_stack_node *b);
-
+//stack_init
+char	**passing(int ac, char **av);
 void	append_node(t_stack_node **stack,int n);
 void	init_stack(t_stack_node **a, char **av);
 t_stack_node	*get_cheapest(t_stack_node *stack);

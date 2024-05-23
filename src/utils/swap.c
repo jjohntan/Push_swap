@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:02:59 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/22 15:56:53 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/23 15:46:48 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	swap(t_stack_node **stack)
 {
-	t_stack_node *first;
-	t_stack_node *second;
+	t_stack_node *first_node;
+	t_stack_node *second_node;
 	
 	if (!*stack || !(*stack)->next)
 		return ;
-	first = *stack;
-	second = (*stack)->next;
-	second->previous = NULL;
-	first->previous = second;
-	if (second->next == NULL)
+	first_node = *stack;
+	second_node = (*stack)->next;
+	second_node->previous = NULL;
+	first_node->previous = second_node;
+	if (second_node->next == NULL)
 	{
-		first->next = NULL;
-		second->next = first;
+		first_node->next = NULL;
+		second_node->next = first_node;
 	}
 	else
 	{
-		first->next = second->next;
-		second->next = first;
-		first->next->previous = first;
+		first_node->next = second_node->next;
+		second_node->next = first_node;
+		first_node->next->previous = first_node;
 	}
-	*stack = second;
+	*stack = second_node;
 }
 
 void	sa(t_stack_node **a)

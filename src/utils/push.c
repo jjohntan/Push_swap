@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:34:38 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 16:57:17 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/28 18:33:02 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 void	push(t_stack_node **dst, t_stack_node **src)
 {
-	t_stack_node	*buffer;
-
+	t_stack_node	*node_push;
+	
 	if (!*src)
-		return ;
-	buffer = *src;
-	if ((*src)->next)
-	{
+		return;
+	node_push = *src;
+	*src = (*src)->next;
+	if (*src)
 		(*src)->previous = NULL;
-		*src = (*src)->next;
-	}
-	buffer->previous = NULL;
+	node_push->previous = NULL;
 	if (!*dst)
 	{
-		*dst = buffer;
+		*dst = node_push;
+		node_push->next = NULL;
 	}
 	else
 	{
-		buffer->next = *dst;
-		buffer->previous = NULL;
-		(*dst)->previous = buffer;
-		*dst = buffer;
+		node_push->next = *dst;
+		node_push->next->previous = node_push;
+		*dst = node_push;
 	}
 }
 
@@ -52,7 +50,7 @@ void	pb(t_stack_node **a, t_stack_node **b)
 // void	print_list(t_stack_node **stack)
 // {
 // 	t_stack_node *buffer;
-//	
+	
 // 	buffer = *stack;
 // 	while (*stack != NULL)
 // 	{

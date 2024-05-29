@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:48:32 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 16:22:26 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/29 16:42:01 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,10 @@ int	error_syntax(char *stack)
 	if ((*stack == '+' || *stack == '-')
 		&& !(stack[1] >= '0' && stack[1] <= '9'))
 		return (1);
-	while (*stack)
+	while (*++stack)
 	{
 		if (!(*stack >= '0' && *stack <= '9'))
 			return (1);
-		stack++;
 	}
 	return (0);
 }
@@ -70,6 +69,6 @@ int	error_duplicate(t_stack_node *stack)
 void	free_error(t_stack_node **a)
 {
 	free_stack(a);
-	ft_printf("error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }

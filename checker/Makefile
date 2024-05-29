@@ -1,4 +1,4 @@
-NAME = push_swap
+NAME = checker
 
 SRCS = src/push_swap.c \
        src/error_free.c \
@@ -11,14 +11,12 @@ UTILS = src/utils/push.c \
 		src/utils/rotate.c \
 		src/utils/swap.c \
 		src/utils/sort_stacks.c \
-		src/utils/tiny_sort.c \
-		src/utils/sort_small_stack.c \
-		src/utils/sort_big_stack.c
+		src/utils/small_sort.c
 
 OBJS = $(SRCS:.c=.o) $(UTILS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinc -Ilibft $(FSANTIZE) -g
+CFLAGS = -Wall -Wextra -Werror -Iinc -Ilibft $(FSANTIZE)
 FSANTIZE = -fsanitize=address -g3
 all: $(NAME)
 

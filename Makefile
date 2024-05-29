@@ -18,7 +18,7 @@ UTILS = src/utils/push.c \
 OBJS = $(SRCS:.c=.o) $(UTILS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iinc -Ilibft $(FSANTIZE) -g
+CFLAGS = -Wall -Wextra -Werror -Iinc -Ilibft
 FSANTIZE = -fsanitize=address -g3
 all: $(NAME)
 

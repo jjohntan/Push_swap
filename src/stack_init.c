@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/29 16:43:43 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/29 17:04:43 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	init_stack(t_stack_node **a, char **av)
 		if (n < INT_MIN || n > INT_MAX)
 			free_error(a);
 		append_node(a, n);
-		ft_printf("n: %d\n", n);
+		// ft_printf("n: %d\n", n);
 	}
 	if (error_duplicate(*a))
 		free_error(a);

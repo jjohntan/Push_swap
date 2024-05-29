@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:00:39 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/24 13:26:54 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/29 19:07:21 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 == *s2 && *s1)
+	while (*s1 || *s2)
 	{
+		if (*s1 != *s2)	
+			return (*s1 - *s2);
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	return (0);
 }
 
 void	error(t_stack_node **a, t_stack_node **b)
 {
 	free_stack(a);
 	free_stack(b);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -69,11 +71,11 @@ int	main(int ac, char **av)
 	b = NULL;
 	input = passing(ac, av);
 	init_stack(&a, input);
-	next_line = get_next_line();
+	next_line = get_next_line(STDIN_FILENO);
 	while (next_line)
 	{
 		parse_command(&a, &b, next_line);
-		next_line = get_next_line();
+		next_line = get_next_line(STDIN_FILENO);
 	}
 	if (stack_sorted(a))
 		write(1, "OK\n", 3);

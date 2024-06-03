@@ -6,11 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:54:30 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/24 10:47:18 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 14:59:40 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../inc/checker.h"
 
 char	*ft_next(char *buffer)
 {
@@ -73,7 +73,7 @@ char	*ft_read(int fd, char *res)
 			return (NULL);
 		}
 		buffer[byte] = '\0';
-		res = ft_strjoin(res, buffer);
+		res = ft_strjoin2(res, buffer);
 	}
 	free(buffer);
 	return (res);

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 22:16:42 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/29 16:43:54 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 16:07:31 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,42 +52,6 @@ t_stack_node	*find_last(t_stack_node *stack)
 	return (node);
 }
 
-// t_stack_node	*find_min(t_stack_node *stack)
-// {
-// 	t_stack_node	*min_node;
-// 	long			min;
-
-// 	if (!stack)
-// 		return (NULL);
-// 	min = LONG_MAX;
-// 	while (stack)
-// 	{
-// 		if (stack->nbr < min)
-// 		{
-// 			min = stack->nbr;
-// 			min_node = stack;
-// 		}
-// 		stack = stack->next;
-// 	}
-// 	return (min_node);
-// }
-
-int	get_min(t_stack_node **stack, int value)
-{
-	t_stack_node	*node; 
-	int	min_index;
-	
-	node = *stack;
-	min_index = node->index;
-	while (node->next)
-	{
-		node = node->next;
-		if ((node->index < min_index) && node->index != value)
-			min_index = node->index;
-	}
-	return (min_index);
-}
-
 t_stack_node	*find_max(t_stack_node	*stack)
 {
 	t_stack_node	*max_node;
@@ -107,3 +71,4 @@ t_stack_node	*find_max(t_stack_node	*stack)
 	}
 	return (max_node);
 }
+

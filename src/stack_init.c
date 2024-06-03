@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/29 17:04:43 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 18:25:07 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,69 +72,16 @@ void	init_stack(t_stack_node **a, char **av)
 		if (n < INT_MIN || n > INT_MAX)
 			free_error(a);
 		append_node(a, n);
-		// ft_printf("n: %d\n", n);
 	}
 	if (error_duplicate(*a))
 		free_error(a);
 	index_stack(a);
 }
 
-// t_stack_node	*get_cheapest(t_stack_node *stack)
-// {
-// 	if (!stack)
-// 		return (NULL);
-// 	while (stack)
-// 	{
-// 		if (stack->cheapest)
-// 			return (stack);
-// 		stack = stack->next;
-// 	}
-// 	return (NULL);
-// }
-// t_stack_node init_stack(void)
-// {
-// 	t_stack_node stack;
-//
-// 	stack.nbr = 0;
-// 	return (stack);
-// }
-
-// void init_stack(t_stack_node *stack)
-// {
-// 	stack->nbr = 0;
-// }
-
-// t_stack_node stack;
-
-// stack = init_stack();
-// init_stack(&stack);
-
-// void	finish_rotation(t_stack_node **stack,
-// t_stack_node *top_node, char stack_name)
-// {
-// 	while (*stack != top_node)
-// 	{
-// 		if (stack_name == 'a')
-// 		{
-// 			if (top_node->above_median)
-// 				ra(stack);
-// 			else
-// 				rra(stack);
-// 		}
-// 		else if (stack_name == 'b')
-// 		{
-// 			if (top_node->above_median)
-// 				rb(stack);
-// 			else
-// 				rrb(stack);
-// 		}
-// 	}
-// }
-
 void	index_stack(t_stack_node **a)
 {
 	t_stack_node	*current_min_node;
-	int			index;
+	int				index;
 
 	index = 0;
 	current_min_node = get_next_min(a);
@@ -143,26 +90,4 @@ void	index_stack(t_stack_node **a)
 		current_min_node->index = index++;
 		current_min_node = get_next_min(a);
 	}
-}
-
-void	*get_next_min(t_stack_node **a)
-{
-	t_stack_node	*min_node;
-	t_stack_node	*moving_node;
-	int			min_found;
-
-	min_node = NULL;
-	min_found = 0;
-	moving_node = *a;
-	while (moving_node)
-	{
-		if ((moving_node->index == -1) && (min_found == 0
-				|| moving_node->nbr < min_node->nbr))
-		{
-			min_node = moving_node;
-			min_found = 1;
-		}
-		moving_node = moving_node->next;
-	}
-	return (min_node);
 }

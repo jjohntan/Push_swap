@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 20:33:53 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/29 17:08:01 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 11:06:01 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	sort_four(t_stack_node **a, t_stack_node **b)
 	if (stack_sorted(*a) == 1)
 		return ;
 	distance = get_distance(a, get_min(a, -1));
-	// printf("DIST: %d\n", distance);
 	if (distance == 1)
 		ra(a);
 	else if (distance == 2)

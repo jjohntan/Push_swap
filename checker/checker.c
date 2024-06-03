@@ -6,11 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:00:39 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/29 19:07:21 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 14:59:18 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../inc/checker.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -69,7 +69,7 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	input = passing(ac, av);
+	input = parsing(ac, av);
 	init_stack(&a, input);
 	next_line = get_next_line(STDIN_FILENO);
 	while (next_line)

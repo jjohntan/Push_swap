@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_free.c                                       :+:      :+:    :+:   */
+/*   error_free_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:48:32 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 18:55:35 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 15:47:33 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../inc/checker.h"
 
 void	free_stack(t_stack_node **stack)
 {
@@ -71,17 +71,4 @@ void	free_error(t_stack_node **a)
 	free_stack(a);
 	write(2, "Error\n", 6);
 	exit(1);
-}
-
-void	free_input(char **input)
-{
-	int	i;
-
-	i = 0;
-	while (input[i])
-	{
-		free(input[i]);
-		i++;
-	}
-	free(input);
 }

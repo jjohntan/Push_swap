@@ -6,11 +6,11 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:54:52 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/24 10:47:07 by jetan            ###   ########.fr       */
+/*   Updated: 2024/05/30 14:59:29 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../inc/checker.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -36,7 +36,7 @@ void	ft_bzero(void *s, size_t n)
 		ptr[i++] = 0;
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin2(char *s1, char *s2)
 {
 	char	*ptr;
 	size_t	i;

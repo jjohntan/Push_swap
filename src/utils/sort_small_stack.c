@@ -6,33 +6,16 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 20:33:53 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 11:06:01 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/04 11:41:26 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	get_distance(t_stack_node **stack, int index)
-{
-	t_stack_node	*node;
-	int	distance;
-	
-	node = *stack;
-	distance = 0;
-	while (node)
-	{
-		if (node->index == index)
-			break ;
-		distance++;
-		node = node->next;
-	}
-	return (distance);
-}
-
 void	sort_three(t_stack_node **a)
 {
 	t_stack_node	*biggest_node;
-	
+
 	biggest_node = find_max(*a);
 	if (*a == biggest_node)
 		ra(a);
@@ -44,11 +27,11 @@ void	sort_three(t_stack_node **a)
 
 void	sort_four(t_stack_node **a, t_stack_node **b)
 {
-	int distance;
-	
+	int	distance;
+
 	if (stack_sorted(*a) == 1)
 		return ;
-	distance = get_distance(a, get_min(a, -1));
+	distance = get_distance(a, get_min_index(a, -1));
 	if (distance == 1)
 		ra(a);
 	else if (distance == 2)
@@ -68,8 +51,8 @@ void	sort_four(t_stack_node **a, t_stack_node **b)
 void	sort_five(t_stack_node **a, t_stack_node **b)
 {
 	int	distance;
-	
-	distance = get_distance(a, get_min(a, -1));
+
+	distance = get_distance(a, get_min_index(a, -1));
 	if (distance == 1)
 		ra(a);
 	else if (distance == 2)

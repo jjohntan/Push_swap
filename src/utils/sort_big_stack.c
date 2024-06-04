@@ -6,11 +6,12 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 19:01:46 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 16:24:57 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/03 15:01:33 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*node;
@@ -18,7 +19,7 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	int				shift;
 	int				element;
 	int				len;
-	
+
 	node = *a;
 	len = stack_len(node);
 	max_bits = get_max_bits(a);

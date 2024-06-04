@@ -15,16 +15,17 @@ UTILS = src/utils/push.c \
 		src/utils/sort_small_stack.c \
 		src/utils/sort_big_stack.c
 		
-BONUS = checker/checker.c \
-		checker/error_free_bonus.c \
-		checker/get_next_line.c \
-		checker/get_next_line_utils.c \
-		checker/push_bonus.c \
-		checker/reverse_rotate_bonus.c \
-		checker/rotate_bonus.c \
-		checker/stack_init_bonus.c \
-		checker/stack_utils_bonus.c \
-		checker/swap_bonus.c
+BONUS = bonus/checker.c \
+		bonus/error_free_bonus.c \
+		bonus/get_next_line.c \
+		bonus/get_next_line_utils.c \
+		bonus/push_bonus.c \
+		bonus/reverse_rotate_bonus.c \
+		bonus/rotate_bonus.c \
+		bonus/stack_init_bonus.c \
+		bonus/stack_utils_bonus.c \
+		bonus/stack_utils2_bonus.c \
+		bonus/swap_bonus.c
 
 OBJS = $(SRCS:.c=.o) $(UTILS:.c=.o)
 
@@ -53,7 +54,7 @@ clean:
 	make -C libft clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_BONUS)
 	rm -f libft/libft.a
 
 re: fclean all

@@ -5,47 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 14:55:03 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 15:50:11 by jetan            ###   ########.fr       */
+/*   Created: 2024/04/24 09:52:22 by jetan             #+#    #+#             */
+/*   Updated: 2024/06/04 19:42:42 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
 # include "../libft/libft.h"
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
-# endif
+# include "../bonus/get_next_line.h"
+# include <limits.h>
+# include <stdio.h>
 
 typedef struct s_stack_node
 {
 	int					nbr;
-	int					index; 
+	int					index;
 	struct s_stack_node	*next;
 	struct s_stack_node	*previous;
 }	t_stack_node;
 
-//get_next_line
-char	*get_next_line(int fd);
-char	*ft_read(int fd, char *res);
-char	*ft_line(char *buffer);
-char	*ft_next(char *buffer);
-char	*ft_strjoin2(char *s1, char *s2);
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t elementCount, size_t elementSize);
-void	ft_bzero(void *s, size_t n);
+//error_free
+void			free_stack(t_stack_node **stack);
+int				error_syntax(char *stack);
+int				error_duplicate(t_stack_node *stack);
+void			free_error(t_stack_node **a);
+void			free_input(char **input);
 
-//checker
-int		ft_strcmp(char *s1, char *s2);
-void	error(t_stack_node **a, t_stack_node **b);
-void	parse_command(t_stack_node **a, t_stack_node **b, char *command);
+//stack node initiation
+void			init_stack(t_stack_node **a, char **av);
+char			**parsing(int ac, char **av);
+void			append_node(t_stack_node **stack, int n);
+void			index_stack(t_stack_node **a);
 
+//stack utilities
+int				stack_sorted(t_stack_node *stack);
+int				stack_len(t_stack_node *stack);
+t_stack_node	*find_last(t_stack_node *stack);
+t_stack_node	*find_min(t_stack_node *stack);
+t_stack_node	*find_max(t_stack_node	*stack);
+int				get_min_index(t_stack_node **stack, int value);
+void			*get_min_node(t_stack_node **a);
+int				get_max_bits(t_stack_node **a);
+int				get_distance(t_stack_node **stack, int index);
 
+//operations
+void			push(t_stack_node **dst, t_stack_node **src);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **a, t_stack_node **b);
+void			reverse_rotate(t_stack_node **stack);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
+void			rotate(t_stack_node **stack);
+void			ra(t_stack_node **a);
+void			rb(t_stack_node **b);
+void			rr(t_stack_node **a, t_stack_node **b);
+void			swap(t_stack_node **stack);
+void			sa(t_stack_node **a);
+void			sb(t_stack_node **b);
+void			ss(t_stack_node **a, t_stack_node **b);
+
+//algorithm
+void			push_swap(t_stack_node **a, t_stack_node **b);
+void			sort_three(t_stack_node **a);
+void			sort_five(t_stack_node **a, t_stack_node **b);
+void			sort_four(t_stack_node **a, t_stack_node **b);
+void			sort_small_stack(t_stack_node **a, t_stack_node **b);
 
 #endif

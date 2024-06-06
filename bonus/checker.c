@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:00:39 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/06 09:12:44 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 09:22:24 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 || *s2)
 	{
-		if (*s1 != *s2)	
+		if (*s1 != *s2)
 			return (*s1 - *s2);
 		s1++;
 		s2++;
@@ -65,7 +65,7 @@ int	main(int ac, char **av)
 	char			**input;
 	char			*next_line;
 	int				len;
-	
+
 	if (ac < 2)
 		return (0);
 	a = NULL;

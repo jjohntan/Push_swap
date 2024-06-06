@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:34:38 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/05 15:14:23 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 09:23:04 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	push(t_stack_node **dst, t_stack_node **src)
 {
 	t_stack_node	*node_push;
-	
+
 	if (!*src)
-		return;
+		return ;
 	node_push = *src;
 	*src = (*src)->next;
 	if (*src)
@@ -52,7 +52,7 @@ void	pb(t_stack_node **a, t_stack_node **b, int print)
 // void	print_list(t_stack_node **stack)
 // {
 // 	t_stack_node *buffer;
-	
+//
 // 	buffer = *stack;
 // 	while (*stack != NULL)
 // 	{

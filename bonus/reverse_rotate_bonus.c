@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:28:04 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 14:59:58 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/05 15:13:03 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ void	reverse_rotate(t_stack_node **stack)
 	*stack = last_node;
 }
 
-void	rra(t_stack_node **a)
+void	rra(t_stack_node **a, int print)
 {
 	reverse_rotate(a);
-	ft_printf("rra\n");
+	if (print == 1)
+		ft_printf("rra\n");
 }
 
-void	rrb(t_stack_node **b)
+void	rrb(t_stack_node **b, int print)
 {
 	reverse_rotate(b);
-	ft_printf("rrb\n");
+	if (print == 1)
+		ft_printf("rrb\n");
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b)
+void	rrr(t_stack_node **a, t_stack_node **b, int print)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_printf("rrr\n");
+	if (print == 1)
+		ft_printf("rrr\n");
 }

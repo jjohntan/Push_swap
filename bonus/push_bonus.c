@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:34:38 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 14:59:51 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/05 15:14:23 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,18 @@ void	push(t_stack_node **dst, t_stack_node **src)
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b)
+void	pa(t_stack_node **a, t_stack_node **b, int print)
 {
 	push(a, b);
-	ft_printf("pa\n");
+	if (print == 1)
+		ft_printf("pa\n");
 }
 
-void	pb(t_stack_node **a, t_stack_node **b)
+void	pb(t_stack_node **a, t_stack_node **b, int print)
 {
 	push(b, a);
-	ft_printf("pb\n");
+	if (print == 1)
+		ft_printf("pb\n");
 }
 // void	print_list(t_stack_node **stack)
 // {

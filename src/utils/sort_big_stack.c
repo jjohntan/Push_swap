@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 19:01:46 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/03 15:01:33 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/05 15:15:13 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 		{
 			node = *a;
 			if ((node->index >> shift) & 1)
-				ra(a);
+				ra(a, 1);
 			else
-				pb(a, b);
+				pb(a, b, 1);
 		}
 		while (stack_len(*b) != 0)
-			pa(a, b);
+			pa(a, b, 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 17:02:59 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/23 16:38:34 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/05 15:09:16 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,24 @@ void	swap(t_stack_node **stack)
 	*stack = second_node;
 }
 
-void	sa(t_stack_node **a)
+void	sa(t_stack_node **a, int print)
 {
 	swap(a);
-	ft_printf("sa\n");
+	if (print == 1)
+		ft_printf("sa\n");
 }
 
-void	sb(t_stack_node **b)
+void	sb(t_stack_node **b, int print)
 {
 	swap(b);
-	ft_printf("sb\n");
+	if (print == 1)
+		ft_printf("sb\n");
 }
 
-void	ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack_node **a, t_stack_node **b, int print)
 {
 	swap(a);
 	swap(b);
-	ft_printf("ss\n");
+	if (print == 1)
+		ft_printf("ss\n");
 }

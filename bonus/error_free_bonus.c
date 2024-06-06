@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:48:32 by jetan             #+#    #+#             */
-/*   Updated: 2024/05/30 15:47:33 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 18:29:17 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,17 @@ void	free_error(t_stack_node **a)
 	free_stack(a);
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void	free_input(char **input)
+{
+	int	i;
+
+	i = 0;
+	while (input[i])
+	{
+		free(input[i]);
+		i++;
+	}
+	free(input);
 }

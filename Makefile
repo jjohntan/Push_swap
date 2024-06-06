@@ -17,8 +17,8 @@ UTILS = src/utils/push.c \
 		
 BONUS = bonus/checker.c \
 		bonus/error_free_bonus.c \
-		bonus/get_next_line.c \
-		bonus/get_next_line_utils.c \
+		bonus/get_next_line_bonus.c \
+		bonus/get_next_line_utils_bonus.c \
 		bonus/push_bonus.c \
 		bonus/reverse_rotate_bonus.c \
 		bonus/rotate_bonus.c \

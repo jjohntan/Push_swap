@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 10:00:39 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/06 09:22:24 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 18:28:59 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	parse_command(t_stack_node **a, t_stack_node **b, char *command)
 {
 	if (!ft_strcmp(command, "pa\n"))
 		pa(a, b, 0);
+	else if (!ft_strcmp(command, "pb\n"))
+		pb(a, b, 0);
 	else if (!ft_strcmp(command, "rra\n"))
 		rra(a, 0);
 	else if (!ft_strcmp(command, "rrb\n"))
@@ -58,13 +60,23 @@ void	parse_command(t_stack_node **a, t_stack_node **b, char *command)
 		error(a, b);
 }
 
+void	print_result(t_stack_node **a)
+{
+	int	len;
+
+	len = stack_len(*a);
+	if (stack_sorted(*a) && stack_len(*a) == len)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
 	char			**input;
 	char			*next_line;
-	int				len;
 
 	if (ac < 2)
 		return (0);
@@ -72,16 +84,15 @@ int	main(int ac, char **av)
 	b = NULL;
 	input = parsing(ac, av);
 	init_stack(&a, input);
-	len = stack_len(a);
+	if (ac == 2)
+		free_input(input);
 	next_line = get_next_line(STDIN_FILENO);
 	while (next_line)
 	{
 		parse_command(&a, &b, next_line);
+		free(next_line);
 		next_line = get_next_line(STDIN_FILENO);
 	}
-	if (stack_sorted(a) && stack_len(a) == len)
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
+	print_result(&a);
 	free_stack(&a);
 }

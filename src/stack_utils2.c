@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:54:16 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/04 19:18:06 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 11:48:16 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,3 +89,15 @@ int	get_distance(t_stack_node **stack, int index)
 	}
 	return (distance);
 }
+// void	print_list(t_stack_node **stack)
+// {
+// 	t_stack_node *buffer;
+//	
+// 	buffer = *stack;
+// 	while (*stack != NULL)
+// 	{
+// 		printf("%d\n", (*stack)->nbr);
+// 		*stack = (*stack)->next;
+// 	}
+// 	*stack = buffer;
+// }

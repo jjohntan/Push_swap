@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 09:52:22 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/05 15:10:59 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 16:47:41 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CHECKER_H
 
 # include "../libft/libft.h"
-# include "../bonus/get_next_line.h"
+# include "../bonus/get_next_line_bonus.h"
 # include <limits.h>
 # include <stdio.h>
 

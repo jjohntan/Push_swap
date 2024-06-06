@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:34:38 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/05 15:07:32 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 11:48:03 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,6 @@ void	pb(t_stack_node **a, t_stack_node **b, int print)
 	if (print == 1)
 		ft_printf("pb\n");
 }
-// void	print_list(t_stack_node **stack)
-// {
-// 	t_stack_node *buffer;
-//	
-// 	buffer = *stack;
-// 	while (*stack != NULL)
-// 	{
-// 		printf("%d\n", (*stack)->nbr);
-// 		*stack = (*stack)->next;
-// 	}
-// 	*stack = buffer;
-// }
-
 // int main() {
 //     t_stack_node *stack_a = NULL;
 //     t_stack_node *stack_b = NULL;

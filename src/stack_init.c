@@ -6,7 +6,7 @@
 /*   By: jetan <jetan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:19:11 by jetan             #+#    #+#             */
-/*   Updated: 2024/06/05 10:48:35 by jetan            ###   ########.fr       */
+/*   Updated: 2024/06/06 10:08:00 by jetan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ char	**parsing(int ac, char **av)
 	int	flag;
 
 	if (ft_strlen(av[1]) == 0)
+	{
 		write (2, "Error\n", 6);
+		exit(1);
+	}
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (NULL);
 	else if (ac == 2)
